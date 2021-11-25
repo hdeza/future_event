@@ -1,6 +1,6 @@
 {
-    "name": "red_egresados",
-    "short_name": "red_egresados",
+    "name": "nulti_auth",
+    "short_name": "nulti_auth",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
