@@ -16,7 +16,10 @@ class _NavigationButtonBarState extends State<NavigationButtonBar> {
   Widget build(BuildContext context) {
     return CurvedNavigationBar(
       key: _bottomNavigationKey,
+      animationDuration: Duration(milliseconds: 300),
+      height: 60.0,
       backgroundColor: Color(0XFFD58CFC),
+      animationCurve: Curves.easeOutBack,
       items: [
         Icon(Icons.home, size: 30),
         Icon(Icons.toc, size: 30),
