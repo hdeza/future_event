@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:nulti_auth/Pages/Login10/Login.dart';
-import 'package:nulti_auth/Pages/Login10/Widgets/TextFieldCustom.dart';
+import 'package:nulti_auth/ui/Pages/Login10/Login.dart';
+import 'package:nulti_auth/ui/Pages/Login10/Widgets/TextFieldCustom.dart';
 
 class SignUp extends StatelessWidget {
   @override

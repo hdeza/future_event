@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nulti_auth/Pages/Login10/Login.dart';
-import 'package:nulti_auth/Pages/Login10/Signup.dart';
-import 'package:nulti_auth/Pages/home_page.dart';
+import 'package:nulti_auth/ui/Pages/home_page.dart';
 
 void main() => runApp(MyApp());
 
