@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:nulti_auth/widgets/navigation_bar.dart';
-import 'package:nulti_auth/widgets/post.dart';
+import 'package:nulti_auth/ui/widgets/navigation_bar.dart';
+import 'package:nulti_auth/ui/widgets/post.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key key}) : super(key: key);
