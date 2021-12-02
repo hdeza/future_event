@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:nulti_auth/main.dart';
-import 'package:slimy_card/slimy_card.dart';
 
 class NotificationPage extends StatelessWidget {
   const NotificationPage({Key key}) : super(key: key);

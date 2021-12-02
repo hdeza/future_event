@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nulti_auth/ui/widgets/post.dart';
 import 'package:nulti_auth/ui/widgets/navigation_bar.dart';
-
 import 'package:slimy_card/slimy_card.dart';
 
 class HomePage extends StatelessWidget {
