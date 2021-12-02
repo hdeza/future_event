@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:nulti_auth/ui/widgets/navigation_bar.dart';
-import 'package:nulti_auth/ui/widgets/post.dart';
 
 class SearchPage extends StatelessWidget {
   const SearchPage({Key key}) : super(key: key);
@@ -20,7 +19,7 @@ class SearchPage extends StatelessWidget {
         color: Color(0XFFD58CFC),
         child: Center(
           child: Column(
-            children: [PostScreen()],
+            children: [],
           ),
         ),
       ),
