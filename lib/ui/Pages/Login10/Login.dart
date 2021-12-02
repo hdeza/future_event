@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/route_manager.dart';
 import 'package:nulti_auth/ui/Pages/Login10/Signup.dart';
 import 'package:nulti_auth/ui/Pages/Login10/Widgets/TextFieldCustom.dart';
 
@@ -30,7 +31,9 @@ class _BottonSignIn extends StatelessWidget {
       child: TextButton(
         child: Text('Iniciar',
             style: TextStyle(color: Colors.white, fontSize: 20)),
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pushNamed(context, 'homepage');
+        },
       ),
     );
   }
