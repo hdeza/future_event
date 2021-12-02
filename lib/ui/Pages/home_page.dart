@@ -12,14 +12,26 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Color(0XFFD58CFC),
-        leading: IconButton(onPressed: () {}, icon: Icon(Icons.account_circle)),
+        leading: IconButton(
+            onPressed: () {},
+            icon: Icon(
+              Icons.account_circle,
+              size: 35,
+            )),
         centerTitle: true,
         title: Text('Future Event',
             style: TextStyle(
                 fontSize: 20,
                 color: Color(0xFF000000),
                 fontWeight: FontWeight.bold)),
-        actions: [IconButton(onPressed: () {}, icon: Icon(Icons.settings))],
+        actions: [
+          IconButton(
+              onPressed: () {},
+              icon: Icon(
+                Icons.settings,
+                size: 30,
+              ))
+        ],
       ),
       body: SafeArea(
         child: ListView.builder(
@@ -29,7 +41,7 @@ class HomePage extends StatelessWidget {
               color: Color(0XFFD58CFC),
               child: Column(
                 children: [
-                  SizedBox(height: 20),
+                  SizedBox(height: 15),
                   SlimyCard(
                     width: 350,
                     color: Color(0xFFFFFFFF),
@@ -47,6 +59,7 @@ class HomePage extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton(
+        elevation: 10,
         child: Icon(
           Icons.add,
           color: Color(0xFF000000),
