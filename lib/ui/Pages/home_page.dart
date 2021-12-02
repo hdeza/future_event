@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nulti_auth/ui/Pages/post.dart';
+import 'package:nulti_auth/ui/widgets/post.dart';
 import 'package:nulti_auth/ui/widgets/navigation_bar.dart';
 
 import 'package:slimy_card/slimy_card.dart';
@@ -16,7 +16,10 @@ class HomePage extends StatelessWidget {
         leading: IconButton(onPressed: () {}, icon: Icon(Icons.account_circle)),
         centerTitle: true,
         title: Text('Future Event',
-            style: TextStyle(fontSize: 20, color: Color(0xFF000000))),
+            style: TextStyle(
+                fontSize: 20,
+                color: Color(0xFF000000),
+                fontWeight: FontWeight.bold)),
         actions: [IconButton(onPressed: () {}, icon: Icon(Icons.settings))],
       ),
       body: SafeArea(
@@ -31,7 +34,7 @@ class HomePage extends StatelessWidget {
                   SlimyCard(
                     width: 350,
                     color: Color(0xFFFFFFFF),
-                    topCardHeight: 150,
+                    topCardHeight: 180,
                     bottomCardHeight: 300,
                     borderRadius: 30,
                     topCardWidget: PostOne(),

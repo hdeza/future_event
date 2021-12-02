@@ -19,7 +19,7 @@ class _NavigationButtonBarState extends State<NavigationButtonBar> {
       animationDuration: Duration(milliseconds: 300),
       height: 60.0,
       backgroundColor: Color(0XFFD58CFC),
-      animationCurve: Curves.easeOutBack,
+      animationCurve: Curves.easeInOutCubicEmphasized,
       items: [
         Icon(Icons.home, size: 30),
         Icon(Icons.toc, size: 30),
