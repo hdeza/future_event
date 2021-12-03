@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:nulti_auth/ui/Pages/Login10/Login.dart';
 import 'package:nulti_auth/ui/Pages/Login10/Signup.dart';
+import 'package:nulti_auth/ui/Pages/chats/chats_page.dart';
 import 'package:nulti_auth/ui/Pages/home_page.dart';
 
 void main() => runApp(MyApp());
@@ -16,7 +17,8 @@ class MyApp extends StatelessWidget {
       routes: {
         'login': (_) => Login(),
         'singup': (_) => SignUp(),
-        'homepage': (_) => HomePage()
+        'homepage': (_) => HomePage(),
+        'chats': (_) => ChatsPage()
       },
       // home: HomePage(),
     );
