@@ -15,13 +15,13 @@ class ChatsPage extends StatelessWidget {
         onPressed: () {},
         child: Icon(Icons.person_add_alt_1),
       ),
-      bottomNavigationBar: NavigationButtonBar(),
     );
   }
 
   AppBar buildAppBar() {
     return AppBar(
       title: Text('Chats'),
+      automaticallyImplyLeading: false,
       backgroundColor: Color(0XFFD58CFC),
       actions: [
         IconButton(

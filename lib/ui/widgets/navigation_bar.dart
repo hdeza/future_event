@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 
 class NavigationButtonBar extends StatefulWidget {
-  NavigationButtonBar({key}) : super(key: key);
+  final Function currentIndex;
+  NavigationButtonBar({key, this.currentIndex}) : super(key: key);
 
   @override
   _NavigationButtonBarState createState() => _NavigationButtonBarState();
@@ -18,10 +19,13 @@ class _NavigationButtonBarState extends State<NavigationButtonBar> {
       key: _bottomNavigationKey,
       animationDuration: Duration(milliseconds: 300),
       height: 60.0,
-      backgroundColor: Color(0XFFD58CFC),
+      backgroundColor: Colors.transparent,
       animationCurve: Curves.easeInOutCubicEmphasized,
       items: [
-        Icon(Icons.home, size: 30),
+        Icon(
+          Icons.home,
+          size: 30,
+        ),
         Icon(Icons.toc, size: 30),
         Icon(Icons.search, size: 30),
         Icon(Icons.message, size: 30)
@@ -29,6 +33,7 @@ class _NavigationButtonBarState extends State<NavigationButtonBar> {
       onTap: (index) {
         setState(() {
           _page = index;
+          widget.currentIndex(index);
         });
       },
     );

@@ -67,7 +67,7 @@ class HomePage extends StatelessWidget {
         onPressed: () {},
         backgroundColor: Color(0xFFFFFFFF),
       ),
-      bottomNavigationBar: NavigationButtonBar(),
+      // bottomNavigationBar: NavigationButtonBar(),
     );
   }
 }

@@ -32,7 +32,7 @@ class _BottonSignIn extends StatelessWidget {
         child: Text('Iniciar',
             style: TextStyle(color: Colors.white, fontSize: 20)),
         onPressed: () {
-          Navigator.pushNamed(context, 'homepage');
+          Navigator.pushNamed(context, 'index');
         },
       ),
     );

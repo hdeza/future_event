@@ -5,6 +5,8 @@ import 'package:nulti_auth/ui/Pages/Login10/Signup.dart';
 import 'package:nulti_auth/ui/Pages/chats/chats_page.dart';
 import 'package:nulti_auth/ui/Pages/home_page.dart';
 
+import 'ui/Pages/index.dart';
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -18,7 +20,8 @@ class MyApp extends StatelessWidget {
         'login': (_) => Login(),
         'singup': (_) => SignUp(),
         'homepage': (_) => HomePage(),
-        'chats': (_) => ChatsPage()
+        'chats': (_) => ChatsPage(),
+        'index': (_) => Index(),
       },
       // home: HomePage(),
     );
