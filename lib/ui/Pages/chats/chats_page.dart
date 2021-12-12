@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nulti_auth/ui/Pages/chats/widgets/body.dart';
+import 'package:nulti_auth/ui/Pages/contacts/contacts_page.dart';
 import 'package:nulti_auth/ui/widgets/navigation_bar.dart';
 
 class ChatsPage extends StatelessWidget {
@@ -12,7 +13,11 @@ class ChatsPage extends StatelessWidget {
       body: Body(),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () => Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => ContactsPage(),
+            )),
         child: Icon(Icons.person_add_alt_1),
       ),
     );

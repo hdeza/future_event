@@ -14,7 +14,9 @@ class chatCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () => Navigator.push(
-          context, MaterialPageRoute(builder: (context) => MessagesPage())),
+        context,
+        MaterialPageRoute(builder: (context) => MessagesPage()),
+      ),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 25.0),
         child: Row(
