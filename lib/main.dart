@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:nulti_auth/domain/use_case/controllers/location.dart';
+import 'package:nulti_auth/domain/use_case/controllers/permission_management.dart';
+import 'package:nulti_auth/domain/use_case/controllers/permissions.dart';
 import 'package:nulti_auth/ui/Pages/Login10/Login.dart';
 import 'package:nulti_auth/ui/Pages/Login10/Signup.dart';
 import 'package:nulti_auth/ui/Pages/chats/chats_page.dart';
 import 'package:nulti_auth/ui/Pages/home_page.dart';
+import 'package:nulti_auth/ui/Pages/notifications/notifications_page.dart';
 import 'ui/Pages/index.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -28,12 +32,22 @@ class _MyAppState extends State<MyApp> {
         'singup': (_) => SignUp(),
         'homepage': (_) => HomePage(),
         'chats': (_) => ChatsPage(),
+        'notifications': (_) => NotificationPage(),
         'index': (_) => Index(),
       },
       //home: HomePage(),
     );
   }
 
+@override
+  void initState() {
+  
+    PermissionsController permissionsController =
+        Get.put(PermissionsController());
+    permissionsController.permissionManager = PermissionManager();
+    Get.lazyPut(() => LocationController());
+    super.initState();
+  }
   
   TextEditingController nameController = TextEditingController();
 

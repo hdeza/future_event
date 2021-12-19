@@ -1,9 +1,33 @@
 import 'package:flutter/material.dart';
-import 'package:nulti_auth/main.dart';
+import 'package:get/get.dart';
+import 'package:nulti_auth/domain/use_case/controllers/location.dart';
+import 'package:nulti_auth/domain/use_case/controllers/permissions.dart';
+import 'package:nulti_auth/domain/use_case/location_management.dart';
+import 'package:url_launcher/url_launcher.dart';
 
-class NotificationPage extends StatelessWidget {
+class NotificationPage extends StatefulWidget {
   const NotificationPage({Key key}) : super(key: key);
 
+  @override
+  _State createState() => _State();
+}
+
+enum RadioState { on, off }
+
+class _State extends State<NotificationPage> {
+  PermissionsController permissionsController;
+  LocationController locationController;
+  LocationManager manager;
+
+  @override
+  void initState() {
+    super.initState();
+    permissionsController = Get.find();
+    locationController = Get.find();
+    manager = LocationManager();
+  }
+
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,61 +44,52 @@ class NotificationPage extends StatelessWidget {
         child: Center(
           child: Column(
             children: [
-              Positioned(
-                  top: 10,
-                  left: 10,
-                  child: Icon(
-                    Icons.account_circle,
-                    color: Color(0xFF000000),
-                    size: 35,
-                  )),
-              Positioned(
-                top: 70,
-                left: 10,
-                child: Text(
-                  '''Lorem ipsum 
-                  notifications''',
-                  style: TextStyle(color: Color(0xFF000000)),
-                  textAlign: TextAlign.center,
+        Expanded(
+          child: Center(
+            child: Padding(
+              padding: const EdgeInsets.only(top: 16.0),
+              child: ElevatedButton(
+                onPressed: () async {
+                  locationController.location.value = null;
+                  if (permissionsController.locationGranted) {
+                    final position = await manager.getCurrentLocation();
+                    locationController.location.value = position;
+                    Get.snackbar('Tu ubicación es...',
+                        'Latitud ${position.latitude} - Longitud: ${position.longitude}');
+                  }
+                },
+                child: const Text('Obtener Ubicacion'),
+              ),
+            ),
+          ),
+        ),
+        Expanded(
+          child: Center(
+            child: Padding(
+              padding: const EdgeInsets.only(top: 16.0),
+              child: Obx(
+                () => ElevatedButton(
+                  onPressed: locationController.location.value != null
+                      ? () async {
+                          final location = locationController.location.value;
+                          final url =
+                              "https://www.google.es/maps?q=${location?.latitude},${location?.longitude}";
+                          await launch(url);
+                        }
+                      : null,
+                  child: const Text('Abrir Maps'),
                 ),
-              )
-            ],
+              ),
+            ),
+          ),
+        ),
+      ],
           ),
         ),
       ),
-      // body: SafeArea(
-      //   child: ListView.builder(
-      //     // itemCount: 5,
-
-      //     itemBuilder: (BuildContext context, int index) {
-      //       return Container(
-      //         color: Color(0XFFD58CFC),
-      //         child: Column(
-      //           children: [
-      //             SizedBox(height: 20),
-      //             SlimyCard(
-      //               width: 350,
-      //               color: Color(0xFFFFFFFF),
-      //               topCardHeight: 150,
-      //               borderRadius: 30,
-      //               topCardWidget: PostThird(),
-      //             ),
-      //             SizedBox(height: 20),
-      //           ],
-      //         ),
-      //       );
-      //     },
-      //   ),
-      // ),
-      // floatingActionButton: FloatingActionButton(
-      //   child: Icon(
-      //     Icons.add,
-      //     color: Color(0xFF000000),
-      //   ),
-      //   onPressed: () {},
-      //   backgroundColor: Color(0xFFFFFFFF),
-      // ),
-      //bottomNavigationBar: NavigationButtonBar(),
     );
   }
 }
+
+
+
